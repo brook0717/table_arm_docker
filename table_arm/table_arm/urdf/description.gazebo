@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<robot>
+  <!-- <gazebo>
+     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+       <robotNamespace>table_arm</robotNamespace>
+       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+       <legacyModeNS>true</legacyModeNS>
+     </plugin>
+  </gazebo> -->
+
+  <gazebo reference="table_arm">
+    <material>Blue</material>
+
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+
+
+
+  <!-- new gazebo -->
+
+
+  <!-- <gazebo reference="link_1">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Blue</material>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+
+  <gazebo reference="link_2">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Blue</material>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+  <gazebo reference="link_3">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Blue</material>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+  <gazebo reference="link_4">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Blue</material>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+  <gazebo reference="link_5">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Blue</material>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+  <gazebo reference="link_6">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Blue</material>
+    <selfCollide>false</selfCollide>
+  </gazebo> -->
+
+  <!-- <gazebo reference="joint_1">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="joint_2">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="joint_3">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="joint_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="joint_5">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="joint_6">
+    <implicitSpringDampejont_6icitSpringDamper>
+  </gazebo>  -->
+
+
+
+</robot>

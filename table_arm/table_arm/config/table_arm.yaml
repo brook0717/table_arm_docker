@@ -1,0 +1,69 @@
+table_arm:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # joint Velocity Controllers ---------------------------------------
+  first_joint_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: joint_1
+    pid: {p: 0.001, i: 0.0, d: 0.0}
+
+  second_joint_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: joint_2
+    pid: {p: 0.001, i: 0.0, d: 0.0}
+
+  third_joint_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: joint_3
+    pid: {p: 0.001, i: 0.0, d: 0.0}
+  
+  fourth_joint_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: joint_4
+    pid: {p: 0.001, i: 0.0, d: 0.0}
+
+  fifth_joint_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: joint_5
+    pid: {p: 0.001, i: 0.0, d: 0.0}
+
+  sixth_joint_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: joint_6
+    pid: {p: 0.001, i: 0.0, d: 0.0}
+
+
+# joint Position Controllers ---------------------------------------
+# first_joint_Position_controller:
+#   type: effort_controllers/JointPositionController
+#   joint: joint_1
+#   pid: {p: 0.001, i: 0.0, d: 0.0}
+
+# second_joint_Position_controller:
+#   type: effort_controllers/JointPositionController
+#   joint: joint_2
+#   pid: {p: 0.001, i: 0.0, d: 0.0}
+
+# third_joint_Position_controller:
+#   type: effort_controllers/JointPositionController
+#   joint: joint_3
+#   pid: {p: 0.001, i: 0.0, d: 0.0}
+
+# fourth_joint_Position_controller:
+#   type: effort_controllers/JointPositionController
+#   joint: joint_4
+#   pid: {p: 0.001, i: 0.0, d: 0.0}
+
+# fifth_joint_Position_controller:
+#   type: effort_controllers/JointPositionController
+#   joint: joint_5
+#   pid: {p: 0.001, i: 0.0, d: 0.0}
+
+# sixth_joint_Position_controller:
+#   type: effort_controllers/JointPositionController
+#   joint: joint_6
+#   pid: {p: 0.001, i: 0.0, d: 0.0}
+

@@ -1,0 +1,72 @@
+FROM osrf/ros:noetic-desktop-full-focal
+
+# Arguments
+ARG USER=initial
+ARG GROUP=initial
+ARG UID=1000
+ARG GID=${UID}
+ARG SHELL=/bin/bash
+
+# Replace apt urls
+RUN sed -i 's@archive.ubuntu.com@ftp.tku.edu.tw/@g' /etc/apt/sources.list
+
+# Install packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ssh byobu nano git sudo \
+    zsh tig \
+    python3-pip\
+    python3-catkin-pkg \
+    python3-osrf-pycommon \
+    python3-catkin-tools \
+    ros-noetic-moveit \
+    ros-noetic-ros-control ros-noetic-ros-controllers \
+    ros-noetic-pcl-ros \
+    # ros-noetic-camera-info-manager \
+    ros-noetic-position-controllers \
+    ros-noetic-velocity-controllers \
+    ros-noetic-effort-controllers \
+    ros-noetic-joint-state-controller \
+    ros-noetic-joint-state-publisher \
+    ros-noetic-joint-state-publisher-gui \
+    ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control \
+    dbus-x11 libglvnd0 libgl1 libglx0 libegl1 libxext6 libx11-6 \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+
+# # Env vars for the nvidia-container-runtime.
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES graphics,utility,compute
+
+    
+# Setup users and groups
+RUN groupadd --gid ${GID} ${GROUP} \
+  && useradd --gid ${GID} --uid ${UID} -ms ${SHELL} ${USER} \
+  && mkdir -p /etc/sudoers.d \
+  && echo "${USER}:x:${UID}:${UID}:${USER},,,:$HOME:${shell}" >> /etc/passwd \
+  && echo "${USER}:x:${UID}:" >> /etc/group \
+  && echo "${USER} ALL=(ALL) NOPASSWD: ALL" > "/etc/sudoers.d/${USER}" \
+  && chmod 0440 "/etc/sudoers.d/${USER}"
+
+# copy entrypoint
+COPY config/entrypoint.bash /entrypoint.bash
+RUN chmod 777 /entrypoint.bash
+
+# setup git config
+RUN mkdir -p /home/${USER}/tmp/git
+COPY config/git/config /home/${USER}/tmp/git
+RUN cat /home/${USER}/tmp/git/config>>/home/${USER}/.bashrc
+RUN rm -rf /home/${USER}/tmp
+
+# Switch user to ${USER}
+USER ${USER}
+RUN sudo mkdir table_arm_docker
+
+
+# Make SSH available
+EXPOSE 22
+
+# Switch to user's HOME folder
+WORKDIR /home/${USER}
+
+# CMD ["terminator"]
+ENTRYPOINT ["/entrypoint.bash","byobu"]
