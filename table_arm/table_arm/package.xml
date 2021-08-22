@@ -16,7 +16,7 @@
   <depend>joint_state_publisher</depend>
   <depend>gazebo</depend>
   <exec_depend>message_runtime</exec_depend>
-  <!-- <export>
-    <architecture_independent />
-  </export> -->
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>joint_state_controller</exec_depend>
+  <exec_depend>effort_controllers</exec_depend>
 </package>
