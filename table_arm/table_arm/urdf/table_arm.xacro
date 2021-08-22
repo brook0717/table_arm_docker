@@ -6,7 +6,7 @@
   name="table_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
   
   <!-- <xacro:include filename="$(find table_arm)/urdf/controller.gazebo" /> -->
-  <xacro:include filename="$(find table_arm)/urdf/description.gazebo" />
+  <xacro:include filename="$(find table_arm)/urdf/table_arm.gazebo.xacro" />
   <xacro:include filename="$(find table_arm)/urdf/table_arm.transmission.xacro" />
 
   <link name="world"/>
@@ -29,12 +29,12 @@
       <mass
         value="1.12509149890152" />
       <inertia
-        ixx="0.00101434409151112"
-        ixy="-1.04880216285518E-06"
-        ixz="2.00480977970094E-07"
-        iyy="0.00103853740225625"
-        iyz="1.41989902783292E-06"
-        izz="0.00175265916240766" />
+        ixx="0.1"
+        ixy="0"
+        ixz="0"
+        iyy="0.1"
+        iyz="0"
+        izz="0.1" />
     </inertial>
     <visual>
       <origin
@@ -69,12 +69,12 @@
       <mass
         value="1.18180242682421" />
       <inertia
-        ixx="0.000885516457055022"
-        ixy="-4.93627366915009E-06"
-        ixz="-2.91116322104174E-06"
-        iyy="0.00138668286939693"
-        iyz="1.56769429304993E-06"
-        izz="0.00115252171660378" />
+        ixx="0.1"
+        ixy="0"
+        ixz="0"
+        iyy="0.1"
+        iyz="0"
+        izz="0.1" />
     </inertial>
     <visual>
       <origin
@@ -127,12 +127,12 @@
       <mass
         value="0.742154760471324" />
       <inertia
-        ixx="0.000383418033802214"
-        ixy="1.95626085431396E-06"
-        ixz="5.52016092099987E-06"
-        iyy="0.000519769983990921"
-        iyz="-4.81334906226082E-06"
-        izz="0.000422634222999281" />
+        ixx="0.1"
+        ixy="0"
+        ixz="0"
+        iyy="0.1"
+        iyz="0"
+        izz="0.1" />
     </inertial>
     <visual>
       <origin
@@ -185,12 +185,12 @@
       <mass
         value="0.806964917043645" />
       <inertia
-        ixx="0.000369652873297802"
-        ixy="-1.52204773385423E-06"
-        ixz="1.20034094378975E-06"
-        iyy="0.000335533295104123"
-        iyz="-1.1515591101845E-05"
-        izz="0.000394955086054961" />
+        ixx="0.1"
+        ixy="0"
+        ixz="0"
+        iyy="0.1"
+        iyz="0"
+        izz="0.1" />
     </inertial>
     <visual>
       <origin
@@ -218,7 +218,7 @@
   </link>
   <joint
     name="joint_3"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 -0.1445 -0.00749999999998746"
       rpy="1.5707963267949 -1.5707963267949 0" />
@@ -228,6 +228,11 @@
       link="link_3" />
     <axis
       xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="6.5" />
   </joint>
   <link
     name="link_4">
@@ -238,12 +243,12 @@
       <mass
         value="0.566102198606674" />
       <inertia
-        ixx="0.000260590319873162"
-        ixy="-5.08487877698499E-05"
-        ixz="-3.4003226615359E-06"
-        iyy="0.000284217607682232"
-        iyz="-5.22728155265439E-06"
-        izz="0.000225229416725362" />
+        ixx="0.1"
+        ixy="0"
+        ixz="0"
+        iyy="0.1"
+        iyz="0"
+        izz="0.1" />
     </inertial>
     <visual>
       <origin
@@ -296,12 +301,12 @@
       <mass
         value="0.468596922084729" />
       <inertia
-        ixx="0.000163486477461417"
-        ixy="-1.12447617071923E-09"
-        ixz="-3.05692009732978E-07"
-        iyy="0.000226300679826748"
-        iyz="-1.3266635516296E-05"
-        izz="0.000178272106720262" />
+        ixx="0.1"
+        ixy="0"
+        ixz="0"
+        iyy="0.1"
+        iyz="0"
+        izz="0.1" />
     </inertial>
     <visual>
       <origin
@@ -329,7 +334,7 @@
   </link>
   <joint
     name="joint_5"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="-0.118793939239341 0.0671751442127215 0.00399999999999767"
       rpy="1.5707963267949 0 -2.35619449019234" />
@@ -339,6 +344,11 @@
       link="link_5" />
     <axis
       xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="6.5" />
   </joint>
   <link
     name="link_6">
@@ -349,12 +359,12 @@
       <mass
         value="0.410187464873175" />
       <inertia
-        ixx="0.000155615505356158"
-        ixy="-1.61032292748035E-05"
-        ixz="-6.67491379603911E-06"
-        iyy="0.000180111157412533"
-        iyz="1.27737173899181E-05"
-        izz="0.000106091737904499" />
+        ixx="0.1"
+        ixy="0"
+        ixz="0"
+        iyy="0.1"
+        iyz="0"
+        izz="0.1" />
     </inertial>
     <visual>
       <origin

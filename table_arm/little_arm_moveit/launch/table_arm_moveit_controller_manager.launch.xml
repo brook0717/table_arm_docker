@@ -10,5 +10,5 @@
   <param name ="table_arm_controller_manager"  value="$(arg table_arm_controller_manager)" />
 
   <!-- loads ros_controllers to the param server -->
-  <rosparam file="$(find Little_arm_moveit)/config/controllers.yaml"/>
+  <rosparam file="$(find little_arm_moveit)/config/controllers.yaml"/>
 </launch>

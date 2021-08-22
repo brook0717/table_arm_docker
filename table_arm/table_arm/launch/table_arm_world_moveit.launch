@@ -8,7 +8,7 @@
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
-  <arg name="verbose" default="true" />
+  <arg name="verbose" default="false" />
 
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -23,25 +23,25 @@
 
   
     <!-- We do not have a robot connected, so publish fake joint states -->
-    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-    <param name="/use_gui" value="false"/> 
-    <rosparam param="/source_list">[/table_arm/joint_states]</rosparam>
-    </node>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+  <param name="/use_gui" value="false"/> 
+  <rosparam param="/source_list">[/table_arm/joint_states]</rosparam>
+  </node>
 
-    <param name="robot_description" command="$(find xacro)/xacro '$(find table_arm)/urdf/table_arm.xacro'"/>
+  <param name="robot_description" command="$(find xacro)/xacro '$(find table_arm)/urdf/table_arm.xacro'"/>
 
-    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model table_arm -param robot_description"/>
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model table_arm -param robot_description"/>
 
-    <!-- Load joint controller configurations from YAML file to parameter server -->
-    <rosparam file="$(find table_arm)/config/table_arm.yaml" command="load"/>
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find table_arm)/config/table_arm.yaml" command="load"/>
 
-    <!-- load the controllers -->
-    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" ns="/table_arm"
-    output="screen" args="group_1_controller
-                          "/>
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" ns="/table_arm"
+  output="screen" args="group_1_controller
+                        "/>
 
-    <!-- convert joint states to TF transforms for rviz, etc -->
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-      <remap from="/joint_states" to="/table_arm/joint_states" />
-    </node>
-  </launch>
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <remap from="/joint_states" to="/table_arm/joint_states" />
+  </node>
+</launch>

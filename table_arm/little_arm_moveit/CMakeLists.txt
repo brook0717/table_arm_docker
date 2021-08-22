@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1.3)
-project(Little_arm_moveit)
+project(little_arm_moveit)
 
 find_package(catkin REQUIRED)
 

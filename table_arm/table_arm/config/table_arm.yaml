@@ -6,64 +6,31 @@ table_arm:
 
   # joint Velocity Controllers ---------------------------------------
   first_joint_velocity_controller:
-    type: effort_controllers/JointVelocityController
+    type: effort_controllers/JointPositionController
     joint: joint_1
-    pid: {p: 0.001, i: 0.0, d: 0.0}
+    pid: {p: 1000, i: 0.0, d: 50.0}
 
   second_joint_velocity_controller:
-    type: effort_controllers/JointVelocityController
+    type: effort_controllers/JointPositionController
     joint: joint_2
-    pid: {p: 0.001, i: 0.0, d: 0.0}
+    pid: {p: 1000, i: 0.0, d: 50.0}
 
   third_joint_velocity_controller:
-    type: effort_controllers/JointVelocityController
+    type: effort_controllers/JointPositionController
     joint: joint_3
-    pid: {p: 0.001, i: 0.0, d: 0.0}
+    pid: {p: 800, i: 0.0, d: 40.0}
   
   fourth_joint_velocity_controller:
-    type: effort_controllers/JointVelocityController
+    type: effort_controllers/JointPositionController
     joint: joint_4
-    pid: {p: 0.001, i: 0.0, d: 0.0}
+    pid: {p: 500, i: 0.0, d: 30.0}
 
   fifth_joint_velocity_controller:
-    type: effort_controllers/JointVelocityController
+    type: effort_controllers/JointPositionController
     joint: joint_5
-    pid: {p: 0.001, i: 0.0, d: 0.0}
+    pid: {p: 500, i: 0.0, d: 30.0}
 
   sixth_joint_velocity_controller:
-    type: effort_controllers/JointVelocityController
+    type: effort_controllers/JointPositionController
     joint: joint_6
-    pid: {p: 0.001, i: 0.0, d: 0.0}
-
-
-# joint Position Controllers ---------------------------------------
-# first_joint_Position_controller:
-#   type: effort_controllers/JointPositionController
-#   joint: joint_1
-#   pid: {p: 0.001, i: 0.0, d: 0.0}
-
-# second_joint_Position_controller:
-#   type: effort_controllers/JointPositionController
-#   joint: joint_2
-#   pid: {p: 0.001, i: 0.0, d: 0.0}
-
-# third_joint_Position_controller:
-#   type: effort_controllers/JointPositionController
-#   joint: joint_3
-#   pid: {p: 0.001, i: 0.0, d: 0.0}
-
-# fourth_joint_Position_controller:
-#   type: effort_controllers/JointPositionController
-#   joint: joint_4
-#   pid: {p: 0.001, i: 0.0, d: 0.0}
-
-# fifth_joint_Position_controller:
-#   type: effort_controllers/JointPositionController
-#   joint: joint_5
-#   pid: {p: 0.001, i: 0.0, d: 0.0}
-
-# sixth_joint_Position_controller:
-#   type: effort_controllers/JointPositionController
-#   joint: joint_6
-#   pid: {p: 0.001, i: 0.0, d: 0.0}
-
+    pid: {p: 500, i: 0.0, d: 30.0}

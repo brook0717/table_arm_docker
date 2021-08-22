@@ -1,11 +1,7 @@
 <?xml version="1.0"?>
-<robot>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   <!-- parses the transmission tags and loads the appropriate hardware interfaces and controller manager -->
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/robot</robotNamespace>
-      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-    </plugin>
+    
   
   <!-- <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
@@ -77,6 +73,4 @@
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </actuator>
   </transmission>
-  </gazebo>
-
 </robot>

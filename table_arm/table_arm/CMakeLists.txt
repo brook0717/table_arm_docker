@@ -33,12 +33,12 @@ install(DIRECTORY launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(talker src/robot_pub.cpp)
-target_link_libraries(talker ${catkin_LIBRARIES})
-add_dependencies(talker dual_arm_control_generate_messages_cpp)
+# add_executable(talker src/robot_pub.cpp)
+# target_link_libraries(talker ${catkin_LIBRARIES})
+# add_dependencies(talker dual_arm_control_generate_messages_cpp)
 
 
-foreach(dir config launch meshes urdf)
-	install(DIRECTORY ${dir}/
-		DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-endforeach(dir)
+# foreach(dir config launch meshes urdf)
+# 	install(DIRECTORY ${dir}/
+# 		DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
+# endforeach(dir)
