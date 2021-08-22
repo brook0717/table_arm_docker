@@ -1,6 +1,6 @@
 <package>
 
-  <name>Little_arm_moveit</name>
+  <name>little_arm_moveit</name>
   <version>0.3.0</version>
   <description>
      An automatically generated package with all the configuration and launch files for using the table_arm with the MoveIt Motion Planning Framework

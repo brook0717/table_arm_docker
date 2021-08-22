@@ -16,4 +16,4 @@ $ catkin build
 
 $ roslaunch table_arm gazebo.launch 
 
-$ roslaunch Little_arm_moveit demo.launch 
+$ roslaunch little_arm_moveit demo.launch 
